@@ -3,7 +3,14 @@ import ReactDOM from 'react-dom';
 
 const App = () => {
   return (
-    <p>Hello World</p>
+    <div>
+      <p>Hello World nodemon updates</p>
+      <button
+        onClick={() => console.log('click mo')}
+      >
+        button
+      </button>
+    </div>
   );
 }
 
