@@ -5,7 +5,7 @@ import App from '../app/app';
 
 const app = express();
 
-app.get('/', (res, req) => {
+app.get('/', (req, res) => {
   const content = renderToString(<App />);
 
   res.send(content);
