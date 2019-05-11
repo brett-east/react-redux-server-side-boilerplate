@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const App = () => {
   return (
     <div>
       <p>Hello World nodemon updates</p>
       <button
+        type="button"
         onClick={() => console.log('click mo')}
       >
         button
