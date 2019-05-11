@@ -2,10 +2,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { Provider } from 'react-redux';
+
 import Routes from '../routes';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+  reducers,
+  {},
+  composeEnhancers(applyMiddleware(sagaMiddleware))
+);
+
 ReactDOM.hydrate(
-  <BrowserRouter>
-    <Routes />
-  </BrowserRouter>
+  <Provider>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  </Provider>
   , document.getElementById('root'));
