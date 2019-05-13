@@ -6,6 +6,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 
+import sagas from './sagas';
 import Routes from '../routes';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -15,9 +16,10 @@ const store = createStore(
   {},
   composeEnhancers(applyMiddleware(sagaMiddleware))
 );
+sagaMiddleware.run(sagas);
 
 ReactDOM.hydrate(
-  <Provider>
+  <Provider store={store}>
     <BrowserRouter>
       <Routes />
     </BrowserRouter>

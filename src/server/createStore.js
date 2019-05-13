@@ -7,7 +7,7 @@ export default () => {
   const store = createStore(
     reducers,
     {},
-    applyMiddleware(sagaMiddleware)
+    applyMiddleware(sagaMiddleware),
   );
 
   return store;

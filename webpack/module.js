@@ -2,8 +2,15 @@ module.exports = {
   rules: [
     {
       test: /\.js?$/,
-      loader: 'babel-loader',
+      use: [
+        {
+          loader: 'babel-loader',
+          query: {
+            babelrc: true,
+          },
+        },
+      ],
       exclude: /node_modules/,
-    }
-  ]
+    },
+  ],
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { Provider } from  'react-redux';
+import { Provider } from 'react-redux';
 import Routes from '../routes';
 
 export default (req, store) => {
@@ -22,4 +22,4 @@ export default (req, store) => {
       <script src="bundle.js"></script>
     </html>
   `;
-}
+};
